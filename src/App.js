@@ -1,7 +1,8 @@
 import React from 'react';
 import TodoList from './components/TodoList';
-import Todo from './components/Todo'
-import TodoForm from './components/TodoForm'
+import Todo from './components/Todo';
+import TodoForm from './components/TodoForm';
+import './components/Todo.css';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -47,7 +48,7 @@ class App extends React.Component {
 
     this.setState({
       todos: this.state.todos.filter(todo => {
-        return !todo.purchased;
+        return !todo.completed;
       })
     });
   };
@@ -82,6 +83,9 @@ class App extends React.Component {
           />
         ))}
         </div>
+        <div>
+      <button onClick={this.clearCompleted}>Clear Completed</button>
+      </div>
       </div>
       
     );

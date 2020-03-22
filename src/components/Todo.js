@@ -2,7 +2,7 @@ import React from "react";
 
 const Todo = props => {
   return (
-    <div onClick={props.onClick}>
+    <div onClick={props.onClick} className={props.todo.completed ? "completed" : ""}>
       <p>{props.todo.task}</p>
     </div>
   );
